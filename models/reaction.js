@@ -4,7 +4,7 @@ const thoughtSchema = new Schema(
     {
         reactionId: {
             type: Schema.Types.ObjectId, 
-            default: () => Types.new ObjectId(),
+            default: () => new Types.ObjectId(),
         },
         reactionBody: {
             type: String,
@@ -17,8 +17,8 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now
-            get: createdAtVal => moment(createdAtVal).format('MMM DD, YYYY [at] hh:mm:a')
+            default: Date.now,
+            get: (currentDate) => moment(currentDate).toDate(),
         }
     },
     {
