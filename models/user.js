@@ -1,5 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
-const thoughtSchema = require ('./thought')
+//
 
 const userSchema = new Schema(
     {
@@ -13,17 +13,16 @@ const userSchema = new Schema(
             type: String,
             required: [true, 'User email address required'],
             unique: true,
-            validate: [validateEmail, 'Please fill a valid email address'],
             match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/, 'Please fill a valid email address']
             // Must match a valid email address (look into Mongoose's matching validation)
         },
-        thoughtsId: [
+        thoughts: [
             {
               type: Schema.Types.ObjectId,
               ref: 'Thought',
             },
           ],
-        friendsId: [
+        friends: [
                 {
                   type: Schema.Types.ObjectId,
                   ref: 'User',
@@ -37,12 +36,12 @@ const userSchema = new Schema(
       id: false,
     }
 );
-userSchema
+/*userSchema
   .virtual('friendCount')
   // Getter
   .get(function () {
-    return this.friendsId.length;
-  });
+    return this.friends.length;
+  });*/
 
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 module.exports = User;

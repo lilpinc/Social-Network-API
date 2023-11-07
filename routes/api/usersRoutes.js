@@ -11,12 +11,12 @@ const {
   } = require('../../controllers/userController.js');
 
 //   /api/users
-  router.route('/').get(getUsers).post(createUser);
+router.route('/').get(getUsers).post(createUser);
 
 // /api/users/:userId/friends/:friendId
 router.route('/:userId').get(getSingleUser).put(updateUser).delete(deleteUser);
 
-router.route('/:userId/friends').post(addFriend);
+router.route('/:userId/friends/:friendId').post(addFriend);
 
 router.route('/:userId/friends/:friendId').delete(deleteFriend);
 

@@ -1,5 +1,6 @@
-const { Schema, model, Types } = require('mongoose');
-const reactionSchema = require('./reaction')
+const { Schema, model } = require('mongoose');
+const moment = require('moment');
+const reactionSchema = require('./Reaction')
 
 const thoughtSchema = new Schema(
     {
@@ -27,9 +28,8 @@ const thoughtSchema = new Schema(
     {
         toJSON: {
             getters: true,
-            virtuals: true
-        },
-        id: false,
+            virtuals: true,
+        }
     }
 );
 thoughtSchema
@@ -39,5 +39,5 @@ thoughtSchema
         return this.reactions.length;
     });
 
-const Thought = model('thought', thoughtSchema)
+const Thought = model('Thought', thoughtSchema);
 module.exports = Thought;
