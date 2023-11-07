@@ -75,7 +75,6 @@ module.exports = {
     },
     async addFriend(req, res) {
         try {
-            console.log ('add friendz');
             console.log(req.params);
         const user = await User.findOneAndUpdate(
           { _id: req.params.userId },

@@ -36,12 +36,12 @@ const userSchema = new Schema(
       id: false,
     }
 );
-/*userSchema
-  .virtual('friendCount')
-  // Getter
-  .get(function () {
-    return this.friends.length;
-  });*/
+userSchema
+    .virtual('friendCount')
+    // Getter
+    .get(function () {
+        return this.friends.length;
+    });
 
 const User = model('User', userSchema);
 module.exports = User;
