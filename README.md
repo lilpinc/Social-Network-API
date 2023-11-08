@@ -42,7 +42,7 @@ This application can be used by typing in npm start
 
 ### Video
 
-Video: 
+Video: https://drive.google.com/file/d/1S0bw7nTlXprWOlnjmCTQ5_mudwalKQkh/view
 
 
 ### Questions?
